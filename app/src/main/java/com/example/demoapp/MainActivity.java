@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 EditText username,password; //hai
-Button loginButton,signUpButton; //hai ,hellow
+Button loginButton,signUpButton; //hai ,hello
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
