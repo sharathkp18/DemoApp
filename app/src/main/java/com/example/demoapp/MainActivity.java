@@ -21,7 +21,7 @@ Button loginButton,signUpButton; //hai ,hello
         loginButton=findViewById(R.id.loginButton);
         signUpButton=findViewById(R.id.signUpButton);
         loginButtonClick();
-        signUpButtonClick();
+        signUpButtonClick();//display
     }
     public void loginButtonClick(){
         loginButton.setOnClickListener(new View.OnClickListener() {
