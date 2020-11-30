@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-EditText username,password; //hai
+EditText username,password; //ha-i
 Button loginButton,signUpButton; //hai ,hello
     @Override
     protected void onCreate(Bundle savedInstanceState) {
