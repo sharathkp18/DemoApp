@@ -36,13 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
                     String EmailInput = email_id.getText().toString();
                     String passInput = create_password.getText().toString();
                     String conformInput = conform_password.getText().toString();
-                    if(firstInput.isEmpty()&&lastInput.isEmpty()&&phoneInput.isEmpty()&&EmailInput.isEmpty()&&passInput.isEmpty()&&conformInput.isEmpty()) {
-                        Toast.makeText(MainActivity2.this, "submitted Successfully", Toast.LENGTH_LONG).show();
-                    }else if(passInput.equals(conformInput)){
-                        Toast.makeText(MainActivity2.this, "password doesn't match", Toast.LENGTH_LONG).show();
-                    }else {
-                        Toast.makeText(MainActivity2.this, "successfully registered", Toast.LENGTH_LONG).show();
-                    }
+                    Toast.makeText(MainActivity2.this, "submitted Successfully", Toast.LENGTH_LONG).show();
                 }
             });
     }
