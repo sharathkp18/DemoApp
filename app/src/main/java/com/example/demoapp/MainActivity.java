@@ -2,6 +2,7 @@ package com.example.demoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +34,8 @@ Button loginButton,signUpButton; //hai ,hello
                 if(userInput.isEmpty()||passInput.isEmpty()){
                     Toast.makeText(MainActivity.this, "please fill username/password", Toast.LENGTH_LONG).show();
                 }else if (userInput.equals("xyz") && passInput.equals("123")) { //database
-                    Toast.makeText(MainActivity.this, "valid user", Toast.LENGTH_LONG).show();
+                   // Toast.makeText(MainActivity.this, "valid user", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this,MainActivity2.class));
                 } else {
                     Toast.makeText(MainActivity.this, "in-valid user", Toast.LENGTH_LONG).show();
                 }
