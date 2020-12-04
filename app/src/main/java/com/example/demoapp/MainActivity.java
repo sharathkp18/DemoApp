@@ -38,7 +38,7 @@ Button loginButton,signUpButton; //hai ,hello
                     Toast.makeText(MainActivity.this, "please fill username/password", Toast.LENGTH_LONG).show();
                 }else if (dbCon.checkUser("logintable",userInput,passInput)) { //database
                    Toast.makeText(MainActivity.this, "valid user", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(MainActivity.this,MainActivity2.class));
+                    startActivity(new Intent(MainActivity.this,Welcome.class));
                 } else {
                     Toast.makeText(MainActivity.this, "in-valid user", Toast.LENGTH_LONG).show();
                 }
@@ -49,7 +49,8 @@ Button loginButton,signUpButton; //hai ,hello
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "function not implemented", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(MainActivity.this,MainActivity2.class));
+                //Toast.makeText(MainActivity.this, "function not implemented", Toast.LENGTH_LONG).show();
             }
         });
     }
