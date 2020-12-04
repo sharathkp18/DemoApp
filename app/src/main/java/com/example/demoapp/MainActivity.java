@@ -13,6 +13,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 EditText username,password; //ha-i
 Button loginButton,signUpButton; //hai ,hello
+    DBConnection dbCon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ Button loginButton,signUpButton; //hai ,hello
         password=findViewById(R.id.password);
         loginButton=findViewById(R.id.loginButton);
         signUpButton=findViewById(R.id.signUpButton);
+        dbCon=new DBConnection();
         loginButtonClick();
         signUpButtonClick();//display123
     }
@@ -33,8 +36,8 @@ Button loginButton,signUpButton; //hai ,hello
 
                 if(userInput.isEmpty()||passInput.isEmpty()){
                     Toast.makeText(MainActivity.this, "please fill username/password", Toast.LENGTH_LONG).show();
-                }else if (userInput.equals("xyz") && passInput.equals("123")) { //database
-                   // Toast.makeText(MainActivity.this, "valid user", Toast.LENGTH_LONG).show();
+                }else if (dbCon.checkUser("logintable",userInput,passInput)) { //database
+                   Toast.makeText(MainActivity.this, "valid user", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(MainActivity.this,MainActivity2.class));
                 } else {
                     Toast.makeText(MainActivity.this, "in-valid user", Toast.LENGTH_LONG).show();
