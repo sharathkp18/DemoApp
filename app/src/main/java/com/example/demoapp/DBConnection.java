@@ -1,4 +1,6 @@
 package com.example.demoapp;
+import android.os.StrictMode;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,19 +18,23 @@ public class DBConnection {
             try {
                 classs = "net.sourceforge.jtds.jdbc.Driver";
                 Class.forName(classs);
-                connectionURL = "jdbc:jtds:sqlserver://192.168.43.35;databaseName=logindb;user=sharath;password=sharath123;";
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+                connectionURL = "jdbc:jtds:sqlserver://192.168.43.243:1433;databaseName=logindb;user=sharath;password=sharath123;";
                 connection = DriverManager.getConnection(connectionURL);
                 statement = connection.createStatement();
             }catch (Exception e){
-                System.out.println(e.getMessage());
-            }
+                e.printStackTrace();
+             }
     }
         public boolean checkUser(String tableName,String userName,String password){
         try {
-            query = "select * from "+tableName+" where name='"+userName+"'"+"password='"+password+"'";
+            query = "select * from "+tableName+" where name='"+userName+"' and password='"+password+"'";
             resultSet = statement.executeQuery(query); //to select
             if (resultSet.next()){
                 isUser=true;
+            }else{
+                isUser=false;
             }
         }catch (Exception e){
             e.printStackTrace();
